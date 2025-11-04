@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn German - Flashcards</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Deutsch Lernen</h1>
+        
+        <!-- Level Selector -->
+        <div class="level-selector">
+            <label for="level-select">Choose a Level:</label>
+            <select id="level-select">
+                <option value="b2">B2 - Upper Intermediate</option>
+                <!-- We'll add C1 and C2 here later -->
+            </select>
+        </div>
+
+        <!-- Lesson Selector -->
+        <div class="lesson-selector">
+            <label for="lesson-select">Choose a Lesson:</label>
+            <select id="lesson-select">
+                <!-- Lessons will be populated dynamically -->
+            </select>
+        </div>
+
+        <div class="progress">Card <span id="current">1</span> of <span id="total">0</span></div>
+        
+        <div class="flashcard-container">
+            <div class="flashcard" id="flashcard">
+                <div class="flashcard-front">
+                    <p id="german-text"></p>
+                </div>
+                <div class="flashcard-back">
+                    <p id="english-text"></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="prev-btn">Previous</button>
+            <button id="shuffle-btn">Shuffle Deck</button>
+            <button id="next-btn">Next</button>
+        </div>
+        <p class="hint">(Click the card to flip it)</p>
+    </div>
+
+    <!-- Load data first, then the main script -->
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
