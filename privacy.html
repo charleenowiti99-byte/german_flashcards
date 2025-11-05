@@ -7,20 +7,37 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+      <!-- NAVIGATION BAR -->
     <nav style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
                 padding: 15px 20px; 
                 color: white;
                 display: flex;
                 justify-content: space-between;
-                align-items: center;">
+                align-items: center;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
         
+        <!-- Website Logo/Title -->
         <div style="font-weight: bold; font-size: 20px;">🇩🇪 German Flashcards</div>
         
-        <div style="display: flex; gap: 20px;">
-            <a href="index.html" style="color: white; text-decoration: none;">Home</a>
-            <a href="about.html" style="color: white; text-decoration: none;">About</a>
-            <a href="privacy.html" style="color: white; text-decoration: none;">Privacy</a>
-            <a href="contact.html" style="color: white; text-decoration: none;">Contact</a>
+        <!-- Navigation Links -->
+        <div style="display: flex; gap: 20px; align-items: center;">
+            <a href="index.html" style="color: white; text-decoration: none; padding: 8px 12px;">Home</a>
+            <a href="about.html" style="color: white; text-decoration: none; padding: 8px 12px;">About</a>
+            <a href="privacy.html" style="color: white; text-decoration: none; padding: 8px 12px;">Privacy</a>
+            <a href="contact.html" style="color: white; text-decoration: none; padding: 8px 12px;">Contact</a>
+            
+            <!-- Go Premium Button in Navigation -->
+            <button onclick="payWithPaystack()" 
+                    style="background: #ffd700; 
+                           color: #333; 
+                           border: none; 
+                           padding: 10px 20px; 
+                           border-radius: 6px; 
+                           cursor: pointer; 
+                           font-weight: bold;
+                           margin-left: 10px;">
+                 Go Premium
+            </button>
         </div>
     </nav>
     <header class="site-header">
