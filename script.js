@@ -1,3 +1,26 @@
+// ========== SECURITY SETUP ========== //
+function setupSecurity() {
+    // Prevent console errors from leaking info
+    window.onerror = function(msg, url, lineNo, columnNo, error) {
+        console.log('Application error handled securely');
+        return false;
+    };
+    
+    // Clickjacking protection
+    if (window.self !== window.top) {
+        window.top.location = window.self.location;
+    }
+    
+    // Log security events (optional)
+    console.log('Security initialized: Owitics Flashcards');
+}
+
+// Initialize security when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    setupSecurity();
+    console.log("DOM loaded, initializing app...");
+    init();
+});
 // ========== ENHANCED APP LOGIC ========== //
 
 // DOM Elements
