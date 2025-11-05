@@ -4,77 +4,80 @@ const levels = {
     b2: {
         name: "B2 - Upper Intermediate",
         lessons: {
+            // FREE LESSON
             lektion1: {
-                name: "Lektion 1: Communication",
+                name: "Lektion 1: Communication (FREE)",
+                premium: false,
                 cards: [
-        { german: "ausdrücken", english: "to express" },
-        { german: "ausreden", english: "finish speaking, talk out" },
-        { german: "ausreden lassen", english: "to let finish" },
-        { german: "ausweichen + D", english: "to evade" },
-        { german: "sich einmischen", english: "to interfere" },
-        { german: "gestikulieren", english: "to gesticulate" },
-        { german: "hinzufügen + A (etwas) (zu + D)", english: "to add" },
-        { german: "kommunizieren mit + D", english: "to communicate (with)" },
-        { german: "nachfragen (bei + D)", english: "to enquire" },
-        { german: "nachhaken (bei + D)", english: "to follow up" },
-        { german: "überfordern + A", english: "to overchallenge" },
-        { german: "unterfordern + A", english: "to underchallenge" },
-        { german: "überschätzen + A", english: "to overestimate" },
-        { german: "unterschätzen + A", english: "to underestimate" },
-        { german: "übertreiben + A", english: "to overstate" },
-        { german: "untertreiben + A", english: "to understate" },
-        { german: "vermitteln + A", english: "to convey" },
-        { german: "vertreten + A", english: "to represent" },
-        { german: "sich abwenden (von + D)", english: "to turn away/avert" },
-        { german: "abwinken", english: "wave off" },
-        { german: "einleuchten + D", english: "to be clear/logical" },
-        { german: "sich erschließen + D", english: "to deduce" },
-        { german: "flüstern", english: "to whisper" },
-        { german: "missfallen + D", english: "to dislike" },
-        { german: "misstrauen + D", english: "to distrust" },
-        { german: "missverstehen + A", english: "to misunderstand" },
-        { german: "nachvollziehen + A", english: "to comprehend" },
-        { german: "signalisieren + D + A", english: "to signal" },
-        { german: "vorwerfen + D + A", english: "to reproach" },
-        { german: "sich wegdrehen", english: "to turn away" },
-        { german: "in die Hände klatschen", english: "to clap" },
-        { german: "mit dem Kopf nicken", english: "to nod" },
-        { german: "den Kopf schütteln", english: "to shake head" },
-        { german: "jammern", english: "to whine" },
-        { german: "das Gesicht verziehen", english: "to grimace" },
-        { german: "mit den Schultern/Achseln zucken", english: "to shrug" },
-        { german: "stoßen auf + A", english: "to bump into" },
-        { german: "die Mehrsprachigkeit", english: "the multilingualism" },
-        { german: "die Körpersprache, -n", english: "the body language" },
-        { german: "die Alltagssprache, -n", english: "the everyday language" },
-        { german: "die Stimmlage, -n", english: "the tone of voice" },
-        { german: "der Gesprächsstoff, -e", english: "the conversation material" },
-        { german: "der Spracherwerb", english: "the language acquisition" },
-        { german: "der Gesichtsausdruck, -e", english: "the facial expression" },
-        { german: "der Blickkontakt, -e", english: "the eye contact" },
-        { german: "das Bedauern", english: "the regret" },
-        { german: "das Gegenüber", english: "the counterpart" },
-        { german: "akzentfrei", english: "accent-free" },
-        { german: "ausführlich", english: "detailed" },
-        { german: "ausweichend", english: "evasive" },
-        { german: "hartnäckig", english: "persistent" },
-        { german: "heftig", english: "vehement" },
-        { german: "komplex", english: "complex" },
-        { german: "jemandem ins Wort fallen", english: "to interrupt somebody" },
-        { german: "zu Wort kommen", english: "to get a word in" },
-        { german: "etwas auf dem Herzen haben", english: "to have something on one's mind" },
-        { german: "reden wie ein Wasserfall", english: "to talk non-stop" },
-        { german: "ganz Ohr sein", english: "to be all ears" },
-        { german: "den Faden verlieren", english: "to lose the thread" },
-        { german: "nur Bahnhof verstehen", english: "to understand nothing" },
-        { german: "sich an den Kopf greifen/fassen", english: "to be aghast" }
-    ],
-},
-
-    lektion2: { 
-        name: "Lektion 2: Emotions & Relationships",
-        cards: [
-        // Lektion 2: Emotions & Relationships
+                    { german: "ausdrücken", english: "to express" },
+                    { german: "ausreden", english: "finish speaking, talk out" },
+                    { german: "ausreden lassen", english: "to let finish" },
+                    { german: "ausweichen + D", english: "to evade" },
+                    { german: "sich einmischen", english: "to interfere" },
+                    { german: "gestikulieren", english: "to gesticulate" },
+                    { german: "hinzufügen + A (etwas) (zu + D)", english: "to add" },
+                    { german: "kommunizieren mit + D", english: "to communicate (with)" },
+                    { german: "nachfragen (bei + D)", english: "to enquire" },
+                    { german: "nachhaken (bei + D)", english: "to follow up" },
+                    { german: "überfordern + A", english: "to overchallenge" },
+                    { german: "unterfordern + A", english: "to underchallenge" },
+                    { german: "überschätzen + A", english: "to overestimate" },
+                    { german: "unterschätzen + A", english: "to underestimate" },
+                    { german: "übertreiben + A", english: "to overstate" },
+                    { german: "untertreiben + A", english: "to understate" },
+                    { german: "vermitteln + A", english: "to convey" },
+                    { german: "vertreten + A", english: "to represent" },
+                    { german: "sich abwenden (von + D)", english: "to turn away/avert" },
+                    { german: "abwinken", english: "wave off" },
+                    { german: "einleuchten + D", english: "to be clear/logical" },
+                    { german: "sich erschließen + D", english: "to deduce" },
+                    { german: "flüstern", english: "to whisper" },
+                    { german: "missfallen + D", english: "to dislike" },
+                    { german: "misstrauen + D", english: "to distrust" },
+                    { german: "missverstehen + A", english: "to misunderstand" },
+                    { german: "nachvollziehen + A", english: "to comprehend" },
+                    { german: "signalisieren + D + A", english: "to signal" },
+                    { german: "vorwerfen + D + A", english: "to reproach" },
+                    { german: "sich wegdrehen", english: "to turn away" },
+                    { german: "in die Hände klatschen", english: "to clap" },
+                    { german: "mit dem Kopf nicken", english: "to nod" },
+                    { german: "den Kopf schütteln", english: "to shake head" },
+                    { german: "jammern", english: "to whine" },
+                    { german: "das Gesicht verziehen", english: "to grimace" },
+                    { german: "mit den Schultern/Achseln zucken", english: "to shrug" },
+                    { german: "stoßen auf + A", english: "to bump into" },
+                    { german: "die Mehrsprachigkeit", english: "the multilingualism" },
+                    { german: "die Körpersprache, -n", english: "the body language" },
+                    { german: "die Alltagssprache, -n", english: "the everyday language" },
+                    { german: "die Stimmlage, -n", english: "the tone of voice" },
+                    { german: "der Gesprächsstoff, -e", english: "the conversation material" },
+                    { german: "der Spracherwerb", english: "the language acquisition" },
+                    { german: "der Gesichtsausdruck, -e", english: "the facial expression" },
+                    { german: "der Blickkontakt, -e", english: "the eye contact" },
+                    { german: "das Bedauern", english: "the regret" },
+                    { german: "das Gegenüber", english: "the counterpart" },
+                    { german: "akzentfrei", english: "accent-free" },
+                    { german: "ausführlich", english: "detailed" },
+                    { german: "ausweichend", english: "evasive" },
+                    { german: "hartnäckig", english: "persistent" },
+                    { german: "heftig", english: "vehement" },
+                    { german: "komplex", english: "complex" },
+                    { german: "jemandem ins Wort fallen", english: "to interrupt somebody" },
+                    { german: "zu Wort kommen", english: "to get a word in" },
+                    { german: "etwas auf dem Herzen haben", english: "to have something on one's mind" },
+                    { german: "reden wie ein Wasserfall", english: "to talk non-stop" },
+                    { german: "ganz Ohr sein", english: "to be all ears" },
+                    { german: "den Faden verlieren", english: "to lose the thread" },
+                    { german: "nur Bahnhof verstehen", english: "to understand nothing" },
+                    { german: "sich an den Kopf greifen/fassen", english: "to be aghast" }
+                ]
+            },
+            
+            // PREMIUM LESSONS
+            lektion2: {
+                name: "Lektion 2: Emotions & Relationships",
+                premium: true,
+                cards: [
         { german: "flirten mit + D", english: "to flirt with" },
         { german: "sich hineinversetzen", english: "to put oneself in someone's position" },
         { german: "trösten + A", english: "to comfort" },
@@ -140,10 +143,12 @@ const levels = {
         { german: "der Familienkreis, -e", english: "the family circle" },
         { german: "das Erstaunen", english: "the astonishment" },
         { german: "das Herzklopfen", english: "the heart palpitation" }
-    ],
-
-    lektion3: [
-        // Lektion 3: Passport Control & Immigration
+        ]
+},
+    lektion3: { 
+    name: "Lektion 3: Passport Control & Immigration",
+    premium: true,
+    cards: [
         { german: "zurechtkommen mit + D", english: "to cope with" },
         { german: "einwandern", english: "to immigrate" },
         { german: "überstehen + A", english: "to survive" },
@@ -199,13 +204,13 @@ const levels = {
         { german: "das Zielland, -er", english: "the destination country" },
         { german: "der Migrationshintergrund, -e", english: "the migration background" },
         { german: "der Flüchtling, -e; der/die Geflüchtete, -n", english: "the refugee" }
-    ],
-},
-
-    lektion4: {
+    ]
+    },
+    
+        lektion4: {
         name: "Lektion 4: Objects & Materials",
+        premium: true,
         cards: [
-        // Lektion 4: Objects & Materials
         { german: "abhandenkommen", english: "to go missing" },
         { german: "sich anfühlen", english: "to feel" },
         { german: "aufkommen für + A", english: "to pay for" },
@@ -296,12 +301,13 @@ const levels = {
         { german: "uralt", english: "ancient" },
         { german: "taghell", english: "as bright as day" },
         { german: "winzig klein", english: "tiny" }
-    ],
-},
+        ]
+    },
+
         lektion5: {
             name: "Lektion 5: Arts & Culture",
+            premium: true,
             cards: [
-        // Lektion 5: Arts & Culture
         { german: "gestalten + A", english: "to design" },
         { german: "improvisieren + A", english: "to improvise" },
         { german: "inspirieren + A", english: "to inspire" },
@@ -378,13 +384,14 @@ const levels = {
         { german: "den Takt halten", english: "keep the beat" },
         { german: "aus der Sicht + G", english: "from the perspective of" },
         { german: "in Worte fassen + A", english: "express in words" }
-    ],
+      
+    ]
 },
 
     lektion6: {
         name: "Lektion 6: History & Society",
+        premium: true,
         cards: [
-        // Lektion 6: History & Society
         { german: "sich ausbreiten", english: "to spread out" },
         { german: "bilden + A", english: "to build, to form" },
         { german: "erobern + A", english: "to conquer" },
@@ -473,13 +480,13 @@ const levels = {
         { german: "Einfluss nehmen", english: "exert influence" },
         { german: "Frieden schließen", english: "make peace" },
         { german: "sich etwas zum Ziel setzen", english: "to set oneself a goal" }
-    ],
+        ]
 },
 
     lektion7: {
         name: "Lektion 7: Education & Career",
+        premium: true,
         cards: [
-        // Lektion 7: Education & Career
         { german: "abbrechen + A", english: "to drop out" },
         { german: "abwenden + A", english: "to avert" },
         { german: "beerdigen + A", english: "to bury" },
@@ -560,13 +567,13 @@ const levels = {
         { german: "kaufmännisch", english: "commercially" },
         { german: "mittelständisch", english: "medium-sized" },
         { german: "tätig", english: "employed" }
-    ],
+        ]
 },
 
     lektion8: {
         name: "Lektion 8: Health & Medicine",
+        premium: true,
         cards: [
-        // Lektion 8: Health & Medicine
         { german: "ausscheiden + A", english: "to excrete" },
         { german: "entgiften + A", english: "to detoxify" },
         { german: "erbrechen + A", english: "to vomit" },
@@ -659,12 +666,12 @@ const levels = {
         { german: "zuckerkrank", english: "diabetic" },
         { german: "pochend", english: "throbbing" },
         { german: "blass", english: "pale" }
-    ],
+    ]
 },
         lektion9: {
         name: "Lektion 9: Technology & Construction",
+        premium: true,
         cards: [
-        // Lektion 9: Technology & Construction
         { german: "befestigen + A", english: "to fix" },
         { german: "entwerfen + A", english: "to design" },
         { german: "fertigen + A", english: "to manufacture" },
@@ -738,13 +745,13 @@ const levels = {
         { german: "einbaubar", english: "installable" },
         { german: "elegant", english: "elegant" },
         { german: "automatisch", english: "automatically" }
-    ],
+        ]
 },
 
     lektion10: {
         name: "Lektion 10: Environment & Ecology",
+        premium: true,
         cards: [
-        // Lektion 10: Environment & Ecology
         { german: "abbauen + A", english: "to abolish, tear down" },
         { german: "abschaffen + A", english: "to abolish" },
         { german: "aufnehmen + A", english: "to absorb" },
@@ -833,13 +840,13 @@ const levels = {
         { german: "organisch", english: "organic" },
         { german: "kontaminiert", english: "contaminated" },
         { german: "ökologisch", english: "ecological" }
-    ],
+        ]
 },
 
     lektion11: {
         name: "Lektion 11: Science & Research",
+        premium: true,
         cards: [
-        // Lektion 11: Science & Research
         { german: "ausgehen von + D", english: "to assume" },
         { german: "auseinandergehen", english: "to not be same" },
         { german: "auswerten + A", english: "to evaluate" },
@@ -914,13 +921,14 @@ const levels = {
         { german: "das Lebewesen, -", english: "the living thing" },
         { german: "das Gewebe, -", english: "the tissue" },
         { german: "das Molekül, -e", english: "the molecule" }
-    ],
+
+    ]
 },
 
     lektion12: {
         name: "Lektion 12: Society & Equality",
+        premium: true,
         cards: [
-        // Lektion 12: Society & Equality
         { german: "abbauen + A", english: "to break down" },
         { german: "aufbauen + A", english: "to build" },
         { german: "ausgrenzen + A", english: "to ostracize" },
@@ -991,13 +999,14 @@ const levels = {
         { german: "rasant", english: "rapidly" },
         { german: "drastisch", english: "drastic" },
         { german: "absolut", english: "absolute" }
-    ],
+
+        ]
 },
 
     lektion13: {
         name: "Lektion 13: Law & Administration",
+        premium: true,
         cards: [
-        // Lektion 13: Law & Administration
         { german: "bewilligen + A", english: "to approve" },
         { german: "vorsprechen bei + D", english: "to appear" },
         { german: "erlischen", english: "to lapse/expire" },
@@ -1076,11 +1085,13 @@ const levels = {
         { german: "Kosten tragen", english: "to bear costs" },
         { german: "die Anklage/die Verteidigung vertreten", english: "to represent the prosecution/defense" },
         { german: "eine Anklage zurückziehen", english: "to withdraw a charge" }
-    ]
+        ]
+        
+      }
+    }
 },
-            
-},
- // ========== PLACEHOLDERS FOR FUTURE LEVELS ========== //
+
+    // ========== PLACEHOLDERS FOR FUTURE LEVELS ========== //
     c1: {
         name: "C1 - Advanced",
         lessons: {}
@@ -1090,5 +1101,4 @@ const levels = {
         name: "C2 - Mastery", 
         lessons: {}
     }
-}
 };
