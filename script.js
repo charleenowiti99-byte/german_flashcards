@@ -177,3 +177,76 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log("DOM loaded, initializing app...");
     init();
 });
+// Premium system functions
+function isPremiumUser() {
+    return localStorage.getItem('premiumUser') === 'true';
+}
+
+function showPremiumUpsell() {
+    const flashcardContainer = document.querySelector('.flashcard-container');
+    flashcardContainer.innerHTML = `
+        <div class="premium-upsell">
+            <div class="premium-card">
+                <h3>🔒 Premium Content Locked</h3>
+                <p>Upgrade to unlock all 13 German B2 lessons!</p>
+                
+                <div class="premium-features">
+                    <h4>What you get:</h4>
+                    <ul>
+                        <li>✅ 12 additional lessons (600+ cards)</li>
+                        <li>✅ Full B2 vocabulary course</li>
+                        <li>✅ Future C1/C2 content</li>
+                        <li>✅ Priority support</li>
+                    </ul>
+                </div>
+                
+                <div class="pricing">
+                    <div class="price-option">
+                        <h4>Monthly</h4>
+                        <p class="price">$9.99/month</p>
+                        <button onclick="showPaymentModal('monthly')" class="subscribe-btn">Subscribe Now</button>
+                    </div>
+                    <div class="price-option">
+                        <h4>Yearly (Save 40%)</h4>
+                        <p class="price">$59.99/year</p>
+                        <button onclick="showPaymentModal('yearly')" class="subscribe-btn">Subscribe Now</button>
+                    </div>
+                </div>
+                
+                <p class="free-trial">7-day free trial included • Cancel anytime</p>
+            </div>
+        </div>
+    `;
+}
+
+function showPaymentModal(plan) {
+    alert(`Payment system coming soon! Selected: ${plan} plan`);
+    // We'll replace this with Stripe later
+}
+
+// Update loadLesson function to check premium status
+function loadLesson(lessonKey) {
+    console.log("Loading lesson:", lessonKey);
+    
+    const level = levels[currentLevel];
+    
+    if (!level.lessons[lessonKey]) {
+        console.error("Lesson not found:", lessonKey);
+        return;
+    }
+    
+    const lesson = level.lessons[lessonKey];
+    
+    // PREMIUM CHECK - Add this block
+    if (lesson.premium && !isPremiumUser()) {
+        showPremiumUpsell();
+        return;
+    }
+    
+    currentLesson = lessonKey;
+    currentDeck = [...lesson.cards];
+    currentCardIndex = 0;
+    
+    console.log("Loaded deck:", currentDeck.length, "cards");
+    showCard();
+}
