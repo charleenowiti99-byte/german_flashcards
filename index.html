@@ -3,90 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" 
-          content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;">
-    <title>Owitics Flashcards - Secure German Learning</title>
-    <meta name="description" content="Master German B2 vocabulary with secure, interactive flashcards. 700+ cards across 13 lessons. Start learning today!">
+    <title>German Flashcards - Premium</title>
     <link rel="stylesheet" href="style.css">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6900048807856455"
-     crossorigin="anonymous"></script>
+    <!-- Paystack -->
+    <script src="https://js.paystack.co/v1/inline.js"></script>
 </head>
 <body>
-<!-- NAVIGATION BAR -->
-    <nav style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
-                padding: 15px 20px; 
-                color: white;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-        
-        <!-- Website Logo/Title -->
-        <div style="font-weight: bold; font-size: 20px;">🇩🇪 German Flashcards</div>
-        
-        <!-- Navigation Links -->
-        <div style="display: flex; gap: 20px; align-items: center;">
-            <a href="index.html" style="color: white; text-decoration: none; padding: 8px 12px;">Home</a>
-            <a href="about.html" style="color: white; text-decoration: none; padding: 8px 12px;">About</a>
-            <a href="privacy.html" style="color: white; text-decoration: none; padding: 8px 12px;">Privacy</a>
-            <a href="contact.html" style="color: white; text-decoration: none; padding: 8px 12px;">Contact</a>
-            
-            <!-- Go Premium Button in Navigation -->
-            <button onclick="payWithPaystack()" 
-                    style="background: #ffd700; 
-                           color: #333; 
-                           border: none; 
-                           padding: 10px 20px; 
-                           border-radius: 6px; 
-                           cursor: pointer; 
-                           font-weight: bold;
-                           margin-left: 10px;">
-                 Go Premium
-            </button>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">🇩🇪 German Flashcards</div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <button class="premium-btn" id="premiumButton">🚀 Go Premium - €9.99/month</button>
+            </div>
         </div>
     </nav>
-    <div class="container">
-        <h1>Deutsch Lernen</h1>
-        
-        <!-- Level Selector -->
-        <div class="level-selector">
-            <label for="level-select">Choose a Level:</label>
-            <select id="level-select">
-                <option value="b2">B2 - Upper Intermediate</option>
-                <!-- We'll add C1 and C2 here later -->
-            </select>
-        </div>
 
-        <!-- Lesson Selector -->
-        <div class="lesson-selector">
-            <label for="lesson-select">Choose a Lesson:</label>
-            <select id="lesson-select">
-                <!-- Lessons will be populated dynamically -->
-            </select>
-        </div>
+    <!-- Main Content -->
+    <main class="main-container">
+        <div class="flashcard-app">
+            <h1>Master German Vocabulary</h1>
+            
+            <!-- Lesson Selector -->
+            <div class="lesson-selector">
+                <label for="lessonSelect">Choose a Lesson:</label>
+                <select id="lessonSelect" onchange="loadSelectedLesson()">
+                    <option value="">-- Select a Lesson --</option>
+                    <!-- Lessons will be populated by JavaScript -->
+                </select>
+            </div>
 
-        <div class="progress">Card <span id="current">1</span> of <span id="total">0</span></div>
-        
-        <div class="flashcard-container">
-            <div class="flashcard" id="flashcard">
-                <div class="flashcard-front">
-                    <p id="german-text"></p>
+            <!-- Free content area -->
+            <div class="free-content">
+                <div class="progress">
+                    Card <span id="currentCard">1</span> of <span id="totalCards">0</span>
                 </div>
-                <div class="flashcard-back">
-                    <p id="english-text"></p>
+                <div class="flashcard" id="flashcard">
+                    <div class="flashcard-front">
+                        <p id="german-text">Select a lesson to start</p>
+                    </div>
+                    <div class="flashcard-back">
+                        <p id="english-text">Choose from the dropdown above</p>
+                    </div>
+                </div>
+                <div class="flashcard-controls">
+                    <button id="prevBtn">Previous</button>
+                    <button id="nextBtn">Next</button>
+                    <button id="flipBtn">Flip Card</button>
+                    <button id="shuffleBtn">Shuffle</button>
+                </div>
+            </div>
+
+            <!-- Premium upsell (shown for premium lessons) -->
+            <div id="premiumUpsell" class="premium-upsell" style="display: none;">
+                <div class="upsell-card">
+                    <h2>🔒 Premium Lesson Locked</h2>
+                    <p>This lesson requires a premium subscription</p>
+                    
+                    <div class="features-list">
+                        <div class="feature">✅ 12 premium lessons (Lektion 3-13)</div>
+                        <div class="feature">✅ 600+ vocabulary cards</div>
+                        <div class="feature">✅ Full B2 course</div>
+                        <div class="feature">✅ Future updates</div>
+                    </div>
+
+                    <div class="pricing-box">
+                        <div class="price-option featured">
+                            <h3>Monthly Subscription</h3>
+                            <div class="price">€9.99<span>/month</span></div>
+                            <p>Cancel anytime</p>
+                            <button class="subscribe-btn" onclick="openPaymentModal()">
+                                Unlock All Premium Lessons
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <p style="margin-top: 1rem; color: #666;">
+                        <strong>Free Lessons:</strong> Lektion 1 & 2 are completely free!
+                    </p>
                 </div>
             </div>
         </div>
+    </main>
 
-        <div class="controls">
-            <button id="prev-btn">Previous</button>
-            <button id="shuffle-btn">Shuffle Deck</button>
-            <button id="next-btn">Next</button>
+    <!-- Payment Modal -->
+    <div id="paymentModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Start Your Subscription</h2>
+                <button class="close-btn" onclick="closePaymentModal()">×</button>
+            </div>
+            <div class="modal-body">
+                <p class="price-display">€9.99 per month</p>
+                <p class="subscription-info">Cancel anytime • Access to Lektion 2-13</p>
+                
+                <div class="email-input">
+                    <label for="userEmail">Your Email:</label>
+                    <input type="email" id="userEmail" placeholder="your@email.com" required>
+                </div>
+                
+                <button class="pay-button" onclick="processPayment()">
+                    Subscribe Now - €9.99/month
+                </button>
+                
+                <p class="secure-notice">🔒 Secure payment powered by Paystack</p>
+            </div>
         </div>
-        <p class="hint">(Click the card to flip it)</p>
     </div>
 
-    <!-- Load data first, then the main script -->
+    <!-- Scripts -->
     <script src="data.js"></script>
     <script src="script.js"></script>
 </body>
